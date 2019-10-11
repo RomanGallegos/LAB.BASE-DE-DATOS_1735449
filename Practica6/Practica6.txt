@@ -1,0 +1,174 @@
+create database Farmacia;
+use Farmacia
+
+delete from empleados;
+ALTER TABLE empleados DROP constraint FK_puesto_id;
+
+
+CREATE TABLE Empleado(
+    Empleado_ID INT PRIMARY KEY NOT NULL ,
+    Nombre_emp VARCHAR(50) NULL,
+    ApPaterno_emp VARCHAR(50) NULL,
+    ApMaterno_emp VARCHAR(50) NULL,
+    Fecha_nac_emp DATE not null,
+    Domicilio_emp VARCHAR(150) NULL,
+	Correo_emp VARCHAR(100) NULL,
+    Telefono_emp VARCHAR(20) NULL,
+    Celular_emp VARCHAR(20) NULL,
+);
+GO
+
+--1
+INSERT INTO Empleado(Empleado_ID,Nombre_emp,ApPaterno_emp,ApMaterno_emp,Fecha_nac_emp,Domicilio_emp,Correo_emp,Telefono_emp,Celular_emp) VALUES
+(1,'Elvis','Holmes','Sutton','01/16/2011','3530 In C.','sem@diameu.net','(467) 392-0577','52-31-16-98-75-19'),
+(2,'Hayley','Peck','Lyons','05/11/2002','Apartado núm.: 166, 5704 Sodales Avda.','Nunc.mauris@estvitaesodales.co.uk','(636) 789-1396','52-30-67-65-81-39'),
+(3,'Vera','Hoffman','Morrison','01/17/2019','Apdo.:751-5029 Iaculis Carretera','consequat.dolor@liberomaurisaliquam.ca','(282) 585-8795','52-41-27-21-67-47'),
+(4,'Yoshio','Brady','Sutton','03/17/1993','Apartado núm.: 273, 6027 Eget Calle','posuere@torquent.edu','(732) 828-4626','52-21-34-60-93-46'),
+(5,'Justine','Puckett','Grimes','06/21/2000','Apdo.:243-4088 Non, Ctra.','vel.quam.dignissim@nullaatsem.net','(818) 647-9632','52-47-58-47-43-31'),
+(6,'Hall','Chan','Nielsen','05/07/1997','Apdo.:876-3979 Eu, C/','Sed.nec.metus@justoPraesentluctus.ca','(834) 542-8016','52-24-57-10-85-22'),
+(7,'Wyatt','Hicks','Rosales','06/09/2018','6892 Phasellus Ctra.','fringilla.mi@ipsumCurabiturconsequat.net','(197) 535-6862','52-11-11-69-82-28'),
+(8,'Owen','Mccoy','Curtis','08/24/2008','Apdo.:790-732 Eget Calle','eget.volutpat@et.ca','(692) 758-5783','52-28-41-68-39-76'),
+(9,'Cailin','Sims','Norton','04/25/2000','Apdo.:716-3186 Placerat, C/','tellus.faucibus.leo@faucibus.net','(519) 681-2618','52-26-77-78-41-54'),
+(10,'Jessamine','Fry','Waller','05/13/2005','Apdo.:446-2285 Leo, Av.','luctus.et.ultrices@enimconsequatpurus.edu','(537) 126-9297','52-85-20-71-18-56');
+--2
+INSERT INTO Empleado(Empleado_ID,Nombre_emp,ApPaterno_emp,ApMaterno_emp,Fecha_nac_emp,Domicilio_emp,Correo_emp,Telefono_emp,Celular_emp) VALUES
+(11,'Shea','King','Vega','11/03/2003','Apartado núm.: 808, 4706 Pede Calle','Donec.egestas@a.ca','(701) 249-8376','52-11-60-92-68-97'),
+(12,'Winifred','Head','Pitts','07/03/2011','1477 Ornare, Av.','mauris.ut.mi@nequenonquam.edu','(356) 798-5511','52-75-21-56-49-15'),
+(13,'Rama','Neal','Mccarthy','01/13/2000','348-4967 Magna Calle','faucibus@duiin.edu','(570) 725-0408','52-66-26-84-74-61'),
+(14,'Aristotle','Haney','Beard','10/25/1998','Apdo.:112-3720 Lorem Av.','montes.nascetur.ridiculus@sitamet.ca','(840) 842-2215','52-79-34-19-96-54'),
+(15,'Sopoline','Mccullough','Vang','11/05/2015','Apartado núm.: 887, 553 In Avda.','Nunc.mauris.Morbi@natoque.edu','(910) 319-7175','52-44-86-50-92-36'),
+(16,'Nyssa','Pratt','Doyle','12/12/1998','Apartado núm.: 296, 775 At Avenida','Praesent.eu.dui@erategetipsum.edu','(592) 812-0062','52-17-34-79-40-70'),
+(17,'Amal','Jackson','Walter','11/15/2011','386-4047 Rhoncus C.','turpis@magna.edu','(558) 545-7267','52-99-58-95-95-19'),
+(18,'Eliana','Doyle','Hutchinson','08/18/2008','Apartado núm.: 317, 2571 Scelerisque Calle','Morbi@malesuadafamesac.net','(411) 799-1598','52-48-35-67-39-94'),
+(19,'Kenneth','Wynn','Huff','11/01/2012','Apdo.:708-639 A Ctra.','Aenean.gravida@ullamcorpervelitin.edu','(534) 576-5501','52-75-29-27-58-56'),
+(20,'Clinton','Callahan','Valentine','06/04/2012','2128 Vestibulum. C/','eu@quisurnaNunc.ca','(757) 525-4776','52-48-61-76-28-16');
+--3
+INSERT INTO Empleado(Empleado_ID,Nombre_emp,ApPaterno_emp,ApMaterno_emp,Fecha_nac_emp,Domicilio_emp,Correo_emp,Telefono_emp,Celular_emp) VALUES
+(21,'Guinevere','Joyner','Quinn','05/17/2016','Apdo.:433-3634 Vivamus Carretera','nibh.Phasellus@erat.com','(605) 669-1399','52-39-59-46-49-80'),
+(22,'Ramona','Terry','Ochoa','01/08/2019','118-5303 Urna. Avda.','at@orciquislectus.org','(806) 814-3295','52-71-36-88-32-14'),
+(23,'August','Gill','Frederick','04/21/2005','6818 Condimentum. Avenida','nec.mollis@ultricesposuere.edu','(743) 269-7849','52-31-76-16-12-41'),
+(24,'Hanae','Valentine','Sargent','10/05/1992','5836 Ipsum. Ctra.','pede.ac@eratsemperrutrum.net','(673) 337-6999','52-10-57-41-60-33'),
+(25,'Martin','Sykes','Huff','09/17/2001','9384 Parturient Calle','Etiam.vestibulum@necquam.com','(651) 694-1639','52-21-46-40-58-58'),
+(26,'Cheryl','Bryant','Hurley','04/25/2012','408-487 Justo Ctra.','faucibus.orci.luctus@pede.ca','(766) 908-3578','52-51-57-11-26-76'),
+(27,'Nasim','Roman','Foley','10/05/2010','107-5280 Fermentum ','Duis.risus@ipsumdolorsit.org','(760) 992-3223','52-24-35-86-12-77'),
+(28,'Desiree','Mcgowan','Kane','07/07/1998','184-2267 Molestie Av.','dolor@Duissitamet.ca','(767) 880-1084','52-28-83-37-85-60'),
+(29,'Ivana','Haley','Jensen','12/01/2007','8806 Auctor Ctra.','litora.torquent.per@eratsemper.co.uk','(615) 603-2926','52-20-33-35-76-86'),
+(30,'Evelyn','Kim','Sharp','05/23/1992','Apdo.:252-7113 Auctor Calle','Ut@In.edu','(788) 299-8657','52-97-78-13-18-94');
+--4
+INSERT INTO Empleado(Empleado_ID,Nombre_emp,ApPaterno_emp,ApMaterno_emp,Fecha_nac_emp,Domicilio_emp,Correo_emp,Telefono_emp,Celular_emp) VALUES
+(31,'Kirsten','Dejesus','Payne','07/06/2004','Apartado núm.: 842, 3270 Ac C.','Fusce.mi.lorem@etmagnis.co.uk','(647) 512-2028','52-83-61-74-69-21'),
+(32,'Cain','Santos','Dillard','04/17/2017','Apdo.:995-7964 Non, ','blandit.enim.consequat@Maurisnondui.com','(188) 806-5478','52-49-97-66-94-29'),
+(33,'Zeph','Beard','Johns','09/21/2019','Apartado núm.: 871, 7488 Sit Carretera','interdum.libero@diam.com','(940) 509-9943','52-35-14-87-92-63'),
+(34,'Yardley','Herman','Fletcher','07/13/2016','7755 Malesuada ','ac.fermentum@gravidamauris.edu','(687) 465-0456','52-88-48-55-92-79'),
+(35,'Genevieve','Bishop','Jimenez','08/09/2005','Apartado núm.: 705, 9979 Orci. Carretera','fringilla.porttitor.vulputate@velit.ca','(801) 940-0186','52-14-22-15-65-51'),
+(36,'Hoyt','Howell','Burke','08/11/2012','2022 Ornare, Carretera','neque.non@consequatpurusMaecenas.edu','(699) 518-0436','52-35-36-71-53-90'),
+(37,'Joy','Jackson','Hunter','06/28/2012','Apdo.:622-4967 Fusce C.','ornare.lectus.ante@Intincidunt.com','(267) 181-6322','52-64-80-75-77-25'),
+(38,'Lavinia','Burns','Abbott','07/04/2016','Apdo.:697-1671 Metus Avenida','Pellentesque@etrutrum.ca','(793) 152-0353','52-25-83-13-49-46'),
+(39,'Wanda','Mitchell','Munoz','07/09/1993','968-7256 Donec Carretera','eu@eget.ca','(335) 161-0213','52-98-75-24-69-75'),
+(40,'Macey','Cortez','Castillo','06/28/2001','339-490 Erat ','sed.turpis.nec@pede.co.uk','(653) 123-9893','52-81-16-75-21-70');
+--5
+INSERT INTO Empleado(Empleado_ID,Nombre_emp,ApPaterno_emp,ApMaterno_emp,Fecha_nac_emp,Domicilio_emp,Correo_emp,Telefono_emp,Celular_emp) VALUES
+(41,'Joshua','Contreras','Middleton','05/03/1993','Apartado núm.: 802, 5673 Tincidunt Avenida','lorem.ipsum.sodales@sempercursus.co.uk','(792) 197-6671','52-28-68-24-99-40'),
+(42,'Zenaida','Casey','Burris','07/08/2005','Apartado núm.: 425, 3901 Diam C/','Cras@libero.com','(306) 724-6491','52-85-97-57-75-29'),
+(43,'Lawrence','Velazquez','Walker','03/17/2019','454-7340 Dictum C/','elit.pellentesque.a@laoreetlibero.com','(281) 983-5836','52-57-71-25-52-15'),
+(44,'Glenna','Gentry','Ayers','05/05/2006','Apdo.:922-4132 Sociis Carretera','diam@Curabitur.co.uk','(522) 607-4905','52-61-98-25-18-34'),
+(45,'Hall','Eaton','Wynn','08/08/2013','458-2589 Quisque Calle','tristique@auctor.net','(941) 808-3341','52-21-53-23-21-51'),
+(46,'Whoopi','Knapp','Brooks','05/24/1998','9483 Mattis. C/','sem.Pellentesque@inconsequat.com','(335) 822-4983','52-22-19-99-71-25'),
+(47,'Astra','Dixon','Wilkerson','02/21/2018','405-4569 Morbi Calle','Mauris.nulla@accumsanlaoreet.edu','(776) 537-5603','52-73-29-87-58-85'),
+(48,'Zenaida','Benjamin','Watts','07/18/2017','Apartado núm.: 598, 9447 Enim, Ctra.','risus.In@Aliquamtincidunt.co.uk','(905) 699-9931','52-64-93-94-52-32'),
+(49,'Regina','Mccormick','Hernandez','07/24/1999','137-7246 Proin Avda.','Duis.a.mi@accumsanconvallis.edu','(832) 975-1569','52-89-73-50-96-79'),
+(50,'Rachel','Snider','Sanford','01/20/2016','Apartado núm.: 186, 756 Odio Avda.','sit.amet@mattisvelitjusto.net','(560) 170-4100','52-97-33-34-83-86');
+--6
+INSERT INTO Empleado(Empleado_ID,Nombre_emp,ApPaterno_emp,ApMaterno_emp,Fecha_nac_emp,Domicilio_emp,Correo_emp,Telefono_emp,Celular_emp) VALUES
+(51,'Logan','Frazier','Roberts','02/14/2014','Apartado núm.: 947, 5396 Commodo ','et.rutrum@Crasvehiculaaliquet.co.uk','(572) 759-3805','52-15-79-34-70-70'),
+(52,'Cassandra','Drake','Young','07/04/2018','Apartado núm.: 204, 365 Eu C.','Sed.molestie.Sed@a.net','(249) 992-9410','52-97-52-76-70-62'),
+(53,'Sheila','Manning','Holt','03/09/2003','Apartado núm.: 778, 1953 Condimentum. C/','egestas.ligula@Pellentesquehabitant.com','(286) 201-8068','52-48-87-50-85-52'),
+(54,'Maxwell','Conner','Herring','04/13/2004','Apartado núm.: 114, 6635 Praesent Calle','congue@Duisrisus.org','(618) 979-9818','52-13-91-85-62-78'),
+(55,'Hoyt','Juarez','Klein','11/03/2018','Apartado núm.: 683, 9373 Sit Av.','eget.laoreet@inhendrerit.edu','(937) 390-7237','52-71-29-79-58-77'),
+(56,'Walter','Davidson','Montgomery','02/09/1995','207-2019 Lacus, ','mauris@nunc.com','(589) 746-2555','52-59-32-29-27-25'),
+(57,'Colton','Mcguire','Kane','07/02/1996','Apartado núm.: 727, 6568 Mauris, Calle','non@orci.net','(910) 384-7455','52-38-42-57-98-89'),
+(58,'Aurora','Horn','Pruitt','02/22/1994','Apartado núm.: 148, 3101 Pellentesque C/','conubia.nostra@Fusce.ca','(189) 785-1125','52-63-88-46-21-15'),
+(59,'Guy','Mccoy','Daniel','07/19/2007','Apartado núm.: 143, 2065 Nonummy C/','ut@mifringillami.net','(993) 383-6701','52-10-68-79-96-71'),
+(60,'Lucy','Leonard','Bray','11/30/2002','2638 Id, C.','egestas.blandit.Nam@odiotristique.org','(259) 334-6409','52-95-37-20-30-30');
+--7
+INSERT INTO Empleado(Empleado_ID,Nombre_emp,ApPaterno_emp,ApMaterno_emp,Fecha_nac_emp,Domicilio_emp,Correo_emp,Telefono_emp,Celular_emp) VALUES
+(61,'Gretchen','Macias','Kent','11/08/1996','521 Sem. Carretera','diam@Nullamvelitdui.edu','(479) 888-3179','52-96-95-86-15-98'),
+(62,'Lamar','Hutchinson','Hendricks','06/08/2012','158-8167 Vivamus C/','lectus.convallis@sempererat.edu','(924) 552-2195','52-80-92-75-72-67'),
+(63,'Merritt','Strickland','Ortiz','10/28/2002','Apartado núm.: 738, 3040 Nam Avda.','non.justo.Proin@luctus.com','(325) 198-6253','52-99-17-23-40-13'),
+(64,'Scarlett','Leon','Myers','12/06/2010','5094 Ipsum. Calle','amet.diam@Aeneansed.ca','(561) 492-3737','52-36-21-71-56-91'),
+(65,'Byron','Grimes','Joyner','10/01/1998','Apartado núm.: 784, 8574 In C.','cursus.diam.at@tristiqueac.net','(181) 730-6700','52-19-87-16-89-87'),
+(66,'Drake','Noble','Booth','07/06/1994','125-4271 Dolor Ctra.','risus.at@dolor.co.uk','(348) 537-7885','52-47-30-34-54-25'),
+(67,'Fay','Berry','Vasquez','07/13/2011','Apartado núm.: 333, 6276 Nullam Carretera','suscipit.nonummy.Fusce@tristiquesenectuset.co.uk','(409) 369-9972','52-61-48-79-78-97'),
+(68,'Leo','Mcclain','Fisher','10/06/2008','Apartado núm.: 332, 2642 Nec Carretera','blandit@tinciduntduiaugue.co.uk','(170) 798-3330','52-95-37-36-78-36'),
+(69,'Hall','Wilson','Paul','09/12/2003','Apdo.:260-1759 In Av.','natoque.penatibus.et@estmollis.ca','(918) 767-5396','52-65-38-16-51-40'),
+(70,'Janna','Burgess','Duke','10/23/2009','Apartado núm.: 680, 8415 Suspendisse C/','diam.dictum@nostraperinceptos.edu','(339) 185-9185','52-33-24-34-35-35');
+--8
+INSERT INTO Empleado(Empleado_ID,Nombre_emp,ApPaterno_emp,ApMaterno_emp,Fecha_nac_emp,Domicilio_emp,Correo_emp,Telefono_emp,Celular_emp) VALUES
+(71,'Tanek','Drake','Villarreal','06/11/2004','Apartado núm.: 956, 9895 Fringilla C.','Fusce@dolornonummyac.org','(456) 162-3576','52-65-89-43-20-98'),
+(72,'Sean','Peters','Britt','11/18/2014','347-4947 Arcu Ctra.','arcu.Sed@urna.org','(123) 873-9612','52-88-69-30-75-93'),
+(73,'Ivana','Moody','Wolfe','12/25/1996','Apdo.:765-4370 Non, C/','mi@imperdieterat.ca','(229) 147-5778','52-91-67-27-15-20'),
+(74,'Dieter','Vance','Bond','04/10/2000','823-4157 Parturient Ctra.','mauris.Suspendisse@justo.edu','(372) 161-5019','52-50-89-58-66-78'),
+(75,'Aidan','Knight','Talley','03/20/2014','Apdo.:647-1934 Lacus. C.','lacinia.orci.consectetuer@velitin.co.uk','(787) 291-8625','52-72-25-94-34-18'),
+(76,'Jonas','Weiss','Bell','05/08/2016','5245 Lacus, Av.','erat.vitae.risus@quam.com','(440) 220-1577','52-47-35-76-24-46'),
+(77,'Tucker','Maddox','Cash','11/13/1992','Apartado núm.: 257, 1678 Eget Ctra.','turpis@Vivamus.com','(258) 327-9924','52-70-67-76-26-86'),
+(78,'Desiree','Bowen','Barnett','06/26/2006','Apdo.:104-5682 Malesuada Av.','tristique@Duisami.ca','(424) 784-5795','52-69-92-62-67-76'),
+(79,'Autumn','Hodge','Mcdaniel','08/08/2006','675-8068 Arcu. Avda.','eleifend@adipiscingfringillaporttitor.net','(164) 469-5957','52-85-20-72-85-61'),
+(80,'Tad','Fields','Juarez','04/12/2005','7802 Montes, Calle','magna.a@vehiculaet.com','(102) 466-7446','52-98-72-43-70-15');
+--9
+INSERT INTO Empleado(Empleado_ID,Nombre_emp,ApPaterno_emp,ApMaterno_emp,Fecha_nac_emp,Domicilio_emp,Correo_emp,Telefono_emp,Celular_emp) VALUES
+(81,'Ann','Decker','Parker','06/02/2010','Apdo.:521-4070 Lectus C/','ultricies.ligula@VivamusnisiMauris.org','(140) 534-5252','52-19-64-52-96-28'),
+(82,'Moana','Mcintyre','Avery','04/19/1997','Apdo.:306-8265 Ipsum Carretera','feugiat.tellus@velitAliquamnisl.org','(676) 815-2275','52-77-92-62-80-32'),
+(83,'Brandon','Bright','Oconnor','06/21/2005','Apartado núm.: 931, 9896 Non, Calle','non.dapibus.rutrum@ridiculus.org','(209) 428-4144','52-62-36-45-10-79'),
+(84,'Martena','Hickman','Ingram','03/08/1993','5306 Eu, C.','Nulla.aliquet@convallis.org','(946) 981-3935','52-41-44-78-98-18'),
+(85,'Cleo','Alexander','Riggs','09/26/2003','Apdo.:183-4688 Dis Avda.','metus.Aliquam@magnisdis.com','(402) 585-4562','52-45-13-25-37-94'),
+(86,'Ezra','Ellis','Banks','10/30/1999','Apdo.:565-9504 Et Calle','facilisis.Suspendisse@ullamcorpervelitin.net','(944) 430-5963','52-79-57-56-30-86'),
+(87,'Andrew','Lloyd','Cardenas','04/13/1998','715-4013 Magna. Av.','nisl.sem.consequat@Nulla.com','(552) 878-8844','52-98-23-77-55-37'),
+(88,'Leo','Hodges','Norton','07/21/2015','Apartado núm.: 901, 1053 Mauris C/','Aliquam.nec@turpisegestasAliquam.co.uk','(965) 954-3216','52-92-12-66-90-95'),
+(89,'Ulla','Rosa','Moss','06/27/2010','491-8553 Fermentum Av.','In.at@tortornibhsit.edu','(645) 662-7492','52-57-73-68-79-73'),
+(90,'Nicole','Moon','Cline','03/11/2019','Apartado núm.: 651, 2841 Auctor, C/','fames.ac@orciadipiscingnon.net','(272) 102-9608','52-97-41-84-81-79');
+--10
+INSERT INTO Empleado(Empleado_ID,Nombre_emp,ApPaterno_emp,ApMaterno_emp,Fecha_nac_emp,Domicilio_emp,Correo_emp,Telefono_emp,Celular_emp) VALUES
+(91,'Hyacinth','Ellison','Weber','02/02/2004','2540 Euismod C/','sapien.molestie.orci@dolorsit.org','(867) 746-4118','52-49-27-95-12-45'),
+(92,'Meghan','Castaneda','Maynard','06/14/2008','Apdo.:565-1687 Quisque Av.','et.malesuada@fringilla.edu','(531) 381-7419','52-68-46-50-31-81'),
+(93,'Dieter','Barker','Farmer','01/13/2017','9348 Ultrices Calle','ipsum@leoVivamus.co.uk','(182) 591-3134','52-53-35-48-23-87'),
+(94,'Nolan','Macias','Buckley','02/09/2019','576-5313 At Ctra.','Integer.eu@semutdolor.edu','(293) 891-0790','52-98-39-59-94-35'),
+(95,'Patrick','Allen','Jordan','11/10/1992','856-6009 Vestibulum Avenida','justo.Proin@in.com','(511) 714-9901','52-34-80-58-18-36'),
+(96,'Kiona','Schultz','Henderson','03/21/2014','8808 Iaculis Calle','bibendum.fermentum.metus@semperduilectus.co.uk','(398) 215-1462','52-16-59-95-92-39'),
+(97,'Giacomo','Alford','Hayden','11/28/2001','Apartado núm.: 171, 1199 Erat Ctra.','mauris@acmattis.co.uk','(475) 897-4410','52-20-10-36-54-99'),
+(98,'Lawrence','Shields','Roy','11/26/2008','5381 Dolor, ','Ut.tincidunt@molestie.net','(747) 143-2622','52-46-28-81-89-26'),
+(99,'Marny','Fox','Pearson','05/31/1999','7737 Magnis Ctra.','erat.nonummy.ultricies@molestieorci.edu','(628) 104-0572','52-96-36-76-55-84'),
+(100,'Chastity','Montoya','Alford','04/07/2019','Apartado núm.: 777, 1774 Id, Av.','velit@cursus.com','(383) 478-8034','52-62-54-44-29-24');
+-- 11 
+INSERT INTO Empleado(Empleado_ID,Nombre_emp,ApPaterno_emp,ApMaterno_emp,Fecha_nac_emp,Domicilio_emp,Correo_emp,Telefono_emp,Celular_emp) VALUES
+(101,'Roman','Holmes','Sutton','01/16/2001','3530 In C.','sem@diameu.net','(467) 392-0577','52-31-16-98-75-19'),
+(102,'Sofia','Peck','Lyons','05/11/2000','Apartado núm.: 166, 5704 Sodales Avda.','Nunc.mauris@estvitaesodales.co.uk','(636) 789-1396','52-30-67-65-81-39'),
+(103,'Juan','Hoffman','Morrison','01/17/2000','Apdo.:751-5029 Iaculis Carretera','consequat.dolor@liberomaurisaliquam.ca','(282) 585-8795','52-41-27-21-67-47'),
+(104,'Lily','Brady','Sutton','03/17/1993','Apartado núm.: 273, 6027 Eget Calle','posuere@torquent.edu','(732) 828-4626','52-21-34-60-93-46'),
+(105,'Justine','Puckett','Grimes','06/21/2000','Apdo.:243-4088 Non, Ctra.','vel.quam.dignissim@nullaatsem.net','(818) 647-9632','52-47-58-47-43-31');
+
+INSERT INTO Empleado(Empleado_ID,Nombre_emp,ApPaterno_emp,ApMaterno_emp,Fecha_nac_emp,Domicilio_emp,Correo_emp,Telefono_emp,Celular_emp) VALUES
+(5,'Roman','Gallegos','Marquez','01/16/2001','3530 In C.','sem@diameu.net','(467) 392-0577','52-31-16-98-75-19');
+--los 5 registros para borrar y 5 para update
+delete from Empleado where Nombre_emp='Roman';
+delete from Empleado where Nombre_emp='Sofia';
+delete from Empleado where Nombre_emp='Juan';
+delete from Empleado where Nombre_emp='Lily';
+delete from Empleado where Nombre_emp='Justine';
+
+UPDATE Empleado
+SET Nombre_emp = 'Jose Jose'
+WHERE Empleado_ID = 1;
+UPDATE Empleado
+SET Nombre_emp = 'Hokage'
+WHERE Empleado_ID = 2;
+UPDATE Empleado
+SET Nombre_emp = 'Woddy'
+WHERE Empleado_ID = 3;
+UPDATE Empleado
+SET Nombre_emp = 'Finn'
+WHERE Empleado_ID = 4;
+UPDATE Empleado
+SET Nombre_emp = 'Zeus'
+WHERE Empleado_ID = 5;
+
+select * from Empleado
